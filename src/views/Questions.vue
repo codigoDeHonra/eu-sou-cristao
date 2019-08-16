@@ -1,8 +1,14 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <v-container fluid>
+        <v-row>
+            <v-col cols="4">
+                <h1>Perguntas?</h1>
+                <p>
+                    Oi
+                </p>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
@@ -10,9 +16,6 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
+  name: 'Questions',
 }
 </script>

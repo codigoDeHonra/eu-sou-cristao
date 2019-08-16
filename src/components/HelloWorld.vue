@@ -1,10 +1,17 @@
 <template>
-  <v-container>
-    <v-layout
-        align-center
-        justify-center
+  <v-container fluid>
+    <v-row
+        align="center"
+        justify="center"
     >
-      <v-flex md4 xs12>
+      <v-col cols="4">
+          <iframe width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/1" 
+              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+          </iframe>
+      </v-col>
+      <v-col cols="4">
           <v-text-field
               label="Nome"
               outlined
@@ -19,9 +26,9 @@
           >
           </v-checkbox>
           <v-btn>Save</v-btn>
-      </v-flex>
+      </v-col>
 
-    </v-layout>
+    </v-row>
   </v-container>
 </template>
 
