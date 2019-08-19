@@ -40,6 +40,11 @@ export default new Router({
       path: '/ativar/:id',
       name: 'ativar',
       component: () => import(/* webpackChunkName: "active" */ './views/Active.vue')
+    },
+    {
+      path: '/perfil/:id',
+      name: 'perfil',
+      component: () => import(/* webpackChunkName: "perfil" */ './views/Perfil.vue')
     }
   ]
 })

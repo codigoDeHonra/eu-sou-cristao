@@ -12,11 +12,22 @@ export const insertDiscipuloAction = async ({ commit }, params) => {
     });
 };
 
-export const listarCertificadoAction = ({ commit }) => {
-  api.syncListarCertificado()
+export const syncDiscipuloAction = async ({ commit }, params) => {
+  await api.sync(params)
     .then((response) => {
       const { data } = response;
-      commit(types.SYNC_LISTAR_CERTIFICADO, data);
+      commit(types.SYNC_DISCIPULO, data);
+    }).catch((e) => {
+      // console.log(e)
+      // throw new TypeError(e, 'error', 10);
+    });
+};
+
+export const syncDiscipulosAction = async ({ commit }) => {
+  await api.syncDiscipulos()
+    .then((response) => {
+      const { data } = response;
+      commit(types.SYNC_DISCIPULOS, data);
     }).catch((e) => {
       // console.log(e)
       // throw new TypeError(e, 'error', 10);

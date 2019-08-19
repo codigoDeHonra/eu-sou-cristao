@@ -36,7 +36,7 @@
     </v-row>
     <v-row v-else>
       <v-col cols="4">
-        Cadastrado
+        Acesse seu e-mail: {{ discipulo.email }}, e clique no link de confirmação, sem confirmar o seu nome não será visivel no site.
       </v-col>
     </v-row>
   </v-container>

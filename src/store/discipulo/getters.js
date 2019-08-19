@@ -1,2 +1,2 @@
-export const certificadoGetter = state => state.certificado;
-export const listarCertificadoGetter = state => state.listarCertificado;
+export const discipuloGetter = state => state.discipulo;
+export const discipulosGetter = state => state.discipulos;

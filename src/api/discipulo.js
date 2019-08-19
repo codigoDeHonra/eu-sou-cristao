@@ -5,12 +5,10 @@ export const insert = function (params) {
   return http.postRequest('/discipulo', params);
 };
 
-export const syncNotas = function () {
-  return http.getRequest('/nfe/listar-notas');
+export const sync = function (params) {
+  return http.getRequest('/discipulo/'+ params);
 };
 
-export const syncNotasByUser = function (params) {
-  return http.getRequest(`/nfe/listar-notas/${params}`);
+export const syncDiscipulos = function () {
+  return http.getRequest('/discipulo');
 };
-
-export const syncNota = id => http.getRequest(`/nfe/buscar-notas/${id}`);
