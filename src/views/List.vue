@@ -11,17 +11,17 @@
           label="Pesquisa"
           single-line
           hide-details
-          >
+        >
         </v-text-field>
-          <v-data-table
-              :headers="headers"
-              :items="discipulosGetter"
-              :sort-by="['calories', 'fat']"
-              :sort-desc="[false, true]"
-              class="elevation-1"
-              :search="search"
-          >
-          </v-data-table>
+        <v-data-table
+          :headers="headers"
+          :items="discipulosGetter"
+          :sort-by="['calories', 'fat']"
+          :sort-desc="[false, true]"
+          class="elevation-1"
+          :search="search"
+        >
+        </v-data-table>
       </v-col>
       </v-row>
   </v-container >
