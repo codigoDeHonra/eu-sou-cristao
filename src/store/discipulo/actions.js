@@ -12,6 +12,17 @@ export const insertDiscipuloAction = async ({ commit }, params) => {
     });
 };
 
+export const activeDiscipuloAction = async ({ commit }, params) => {
+  await api.active(params)
+    .then((response) => {
+      const { data } = response;
+      commit(types.ACTIVE_DISCIPULO, data);
+    }).catch((e) => {
+      // console.log(e)
+      // throw new TypeError(e, 'error', 10);
+    });
+};
+
 export const syncDiscipuloAction = async ({ commit }, params) => {
   await api.sync(params)
     .then((response) => {

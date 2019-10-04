@@ -32,7 +32,6 @@ export default {
     { }
   ),
   created () {
-    //this.$vuetify.theme.dark = true
     this.syncDiscipuloAction(this.$route.params.id)
   },
   computed: {

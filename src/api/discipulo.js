@@ -1,6 +1,5 @@
 import * as http from './http';
 
-
 export const insert = function (params) {
   return http.postRequest('/discipulo', params);
 };
@@ -11,4 +10,8 @@ export const sync = function (params) {
 
 export const syncDiscipulos = function () {
   return http.getRequest('/discipulo');
+};
+
+export const active = function (code) {
+  return http.getRequest(`/discipulo/${code}/active`);
 };

@@ -37,7 +37,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "questions" */ './views/Questions.vue')
     },
     {
-      path: '/ativar/:id',
+      path: '/ativar/:code',
       name: 'ativar',
       component: () => import(/* webpackChunkName: "active" */ './views/Active.vue')
     },

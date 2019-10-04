@@ -1,12 +1,12 @@
 <template>
   <v-container fluid>
     <v-row
-      v-if="!confirmed"
       align="center"
       justify="center"
     >
       <v-col cols="4">
         teste
+
       </v-col>
     </v-row>
   </v-container>
@@ -15,14 +15,14 @@
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
-  name: 'Register',
+  name: 'Active',
   data: () => (
     {
     }
   ),
-    created () {
-        this.$vuetify.theme.dark = true
-    },
+  created () {
+    this.activeDiscipuloAction(this.$route.params.code)
+  },
   computed: {
     ...mapGetters({
       usuarioGetter: 'usuario/usuarioGetter',
@@ -31,11 +31,8 @@ export default {
   methods: {
     ...mapActions({
       insertDiscipuloAction: 'discipulo/insertDiscipuloAction',
+      activeDiscipuloAction: 'discipulo/activeDiscipuloAction'
     }),
-    save(){
-      this.insertDiscipuloAction(this.discipulo)
-      this.confirmed = true
-    }
   },
 };
 </script>
