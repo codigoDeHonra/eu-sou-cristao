@@ -64,7 +64,7 @@ import VeeValidate from 'vee-validate';
 //import VueRecaptcha from 'vue-recaptcha'
 import { VueReCaptcha } from 'vue-recaptcha-v3'
 Vue.use(VeeValidate);
-Vue.use(VueReCaptcha, { siteKey: '6LfX7rsUAAAAAD17lpAJZb3cS7lt9JLTDGH1s_KB' })
+Vue.use(VueReCaptcha, { siteKey: '6Lfp77MUAAAAANtmEGTbkyJysxAbrRdE7_v01nkG' })
 
 export default {
   name: 'Register',
@@ -113,16 +113,14 @@ export default {
       insertDiscipuloAction: 'discipulo/insertDiscipuloAction',
     }),
     save(){
+      const vm = this
       this.$validator.validateAll()
         .then((r)=> {
           if(r) {
-             /*const p = this
-              .insertDiscipuloAction(this.discipulo)
-            console.log(p.resolve)*/
-              const p = this.insertDiscipuloAction(this.discipulo)
-            console.log(p.then(r => console.log(r)))
-
-            //Promise.all([p]).then(function(r) { console.log(r)})
+            vm.$recaptcha('homepage').then((token) => {
+              vm.discipulo.recaptcha = token
+              vm.insertDiscipuloAction(vm.discipulo)
+            })
           }
         }
         )
